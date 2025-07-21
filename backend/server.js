@@ -9,10 +9,10 @@ import config from "./src/config/config.js";
 const server = createServer(app)
 const io = new Server(server, {
             cors: {
-                        origin: config.NODE_ENV === "production" ? "https://skill-swap-lpnt.vercel.app" : config.LOCAL_HOST,
+                        origin: config.NODE_ENV === "production" ? config.CLIENT_URL : config.LOCAL_HOST,
                         credentials: true,
                         methods: ["GET", "POST"],
-                        
+
             }
 });
 
