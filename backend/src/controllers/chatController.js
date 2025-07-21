@@ -1,7 +1,7 @@
 import asyncHandler from "../middleware/asyncHandler.js";
 import Chat from "../models/Chat.js";
 import Message from "../models/Message.js";
-import SkillExchangeRequest from "../models/skillExchange.js";
+import SkillExchangeRequest from "../models/SkillExchange.js";
 import CustomError from "../utils/customError.js";
 
 export const createChat = asyncHandler(
