@@ -1,0 +1,53 @@
+@import "tailwindcss";
+:root {
+  --color-primary: #4F46E5;
+  /* Indigo for primary buttons and key actions */
+  --color-primary-light: #818CF8;
+  /* Lighter indigo for hover effects */
+  --color-primary-dark: #3730A3;
+  /* Darker indigo for active/pressed states */
+  --color-secondary: #EC4899;
+  /* Coral pink for accents and secondary actions */
+  --color-secondary-light: #F472B6;
+  /* Lighter coral for hover */
+  --color-neutral-bg: #F8FAFC;
+  /* Off-white for backgrounds */
+  --color-neutral-light: #E5E7EB;
+  /* Light gray for borders or cards */
+  --color-neutral-text: #6B7280;
+  /* Mid-gray for body text */
+  --color-neutral-dark: #1F2A44;
+  /* Dark gray for headings or emphasis */
+  --color-success: #2DD4BF;
+  /* Teal for success states or highlights */
+  --color-error: #F87171;
+  /* Soft red for errors or warnings */
+}
+
+
+/* Example utility classes for applying the theme */
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-light)] active:bg-[var(--color-primary-dark)] transition-colors duration-200 rounded-lg px-4 py-2;
+  }
+
+  .btn-secondary {
+    @apply bg-[var(--color-secondary)] text-white hover:bg-[var(--color-secondary-light)] transition-colors duration-200 rounded-lg px-4 py-2;
+  }
+
+     .btn-primary-active {
+       @apply bg-[var(--color-primary)] text-white rounded-lg px-4 py-2;
+     }
+
+  .card {
+    @apply bg-[var(--color-neutral-bg)] border-[var(--color-neutral-light)] shadow-sm rounded-lg p-4;
+  }
+
+  .text-body {
+    @apply text-[var(--color-neutral-text)];
+  }
+
+  .text-heading {
+    @apply text-[var(--color-neutral-dark)];
+  }
+}
