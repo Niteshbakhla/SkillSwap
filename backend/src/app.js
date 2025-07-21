@@ -24,7 +24,7 @@ if (!fs.existsSync('./uploads')) {
 app.use(cookieParser())
 app.use(express.json());
 app.use(cors({
-            origin: config.NODE_ENV === "production" ? "https://skill-swap-lpnt.vercel.app/" : config.LOCAL_HOST,
+            origin: config.NODE_ENV === "production" ? "https://skill-swap-lpnt.vercel.app" : config.LOCAL_HOST,
             credentials: true
 }))
 app.use('/uploads', express.static(path.resolve('./uploads')));
