@@ -30,7 +30,4 @@ coverage/
 *.sublime-workspace
 *.sublime-project
 
-# Optional: lock files (if your team prefers not to commit them)
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+
