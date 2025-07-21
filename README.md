@@ -40,7 +40,6 @@ Built with **MERN stack** + Socket.io for realtime chat.
 >    * Four feature cards, each with an icon and title:
 >
 >      * Connect with Learners
->      * Smart Matching
 >      * Built-in Chat
 >      * Skill Reviews
 > 3. **How It Works Section**
@@ -50,7 +49,6 @@ Built with **MERN stack** + Socket.io for realtime chat.
 >
 >      * Sign up
 >      * Create an Offer
->      * Find Matches
 >      * Send Request
 >      * Start Learning
 > 4. **Join Now Section**
