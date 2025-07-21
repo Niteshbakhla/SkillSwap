@@ -4,21 +4,25 @@ import { useNavigate } from 'react-router-dom';
 
 const cards = [
             {
+                        id: 1,
                         icons: <Users2Icon />,
                         head: "Connect with Learners",
                         para: "Join a global community of learners and teachers to share knowledge."
             },
             {
+                        id: 2,
                         icons: <SearchIcon />,
                         head: "Smart Matching",
                         para: "Find the perfect skill exchange with our intelligent matching system."
             },
             {
+                        id: 3,
                         icons: <MessageCircle />,
                         head: "Built-in Chat",
                         para: "Communicate seamlessly with your learning partners in real-time.."
             },
             {
+                        id: 4,
                         icons: <Stars />,
                         head: "Skill Reviews",
                         para: "Build trust with verified reviews from your skill exchange partners."
@@ -51,7 +55,7 @@ const LandingPage = () => {
                                                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
                                                             {
                                                                         cards.map((data) => (
-                                                                                    <motion.div whileInView={{ opacity: 1 }} whileHover={{ scale: 1.1 }} className="card text-center">
+                                                                                    <motion.div key={data.id} whileInView={{ opacity: 1 }} whileHover={{ scale: 1.1 }} className="card text-center">
                                                                                                 <div className="text-[var(--color-primary)] text-3xl mb-4 flex justify-center">{data.icons}</div>
                                                                                                 <h3 className="text-heading text-xl font-semibold mb-2">{data.head}</h3>
                                                                                                 <p className="text-body">{data.para}</p>
