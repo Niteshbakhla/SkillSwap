@@ -1,5 +1,5 @@
 import asyncHandler from "../middleware/asyncHandler.js";
-import Offer from "../models/offer.js";
+import Offer from "../models/Offer.js";
 import SkillExchangeRequest from "../models/skillExchange.js";
 import User from "../models/User.js";
 import CustomError from "../utils/customError.js";
