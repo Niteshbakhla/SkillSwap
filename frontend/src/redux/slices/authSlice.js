@@ -87,7 +87,7 @@ const authSlice = createSlice({
                         // logout
                         builder
                                     .addCase(logout.pending, (state, action) => {
-                                                state.isLogin = true
+                                                state.isLogin = false
                                     })
 
                                     .addCase(logout.fulfilled, (state, action) => {
@@ -96,7 +96,7 @@ const authSlice = createSlice({
                                     })
 
                                     .addCase(logout.rejected, (state, action) => {
-                                                state.isLogin = true
+                                                state.isLogin = false
                                     })
             }
 });

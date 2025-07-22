@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosinstance = axios.create({
-            baseURL: `https://skillswap-6weo.onrender.com/api`,
+            baseURL: import.meta.env.VITE_API_URL,
             withCredentials: true
 })
 
