@@ -4,11 +4,8 @@ export const setupSocket = (io) => {
             io.on("connection", (socket) => {
                         const userId = socket.userId?.id
                         socket.join(userId)
-
                         socket.on("sendMessage", async ({ receiverId, text }) => {
-
-                                    const message = await Message.create({ senderId: userId, receiverId, text })
-                                    console.log(message)
+                                    const message = await Message.create({ senderId: userId, receiverId, text });
                                     // emit to receiver
 
                                     io.to(receiverId).emit('receiveMessage', message);
