@@ -1,7 +1,7 @@
 # 🔄 Skill Exchange Platform (MERN)
 
 A platform where users can exchange skills — e.g., "I can teach Spanish and want to learn Guitar".  
-Built with **MERN stack** + Socket.io for realtime chat.
+Built with **MERN stack** + Socket.io for realtime chat
 
 ---
 
