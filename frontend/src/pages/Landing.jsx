@@ -35,7 +35,7 @@ const LandingPage = () => {
             return (
                         <div className="min-h-screen flex flex-col">
                                     {/* Hero Section */}
-                                    <section className="bg-[var(--color-neutral-bg)] py-20 flex flex-col items-center text-center">
+                                    <motion.section whileInView={{ scale: 1 }} initial={{ scale: 0.9 }} className="bg-[var(--color-neutral-bg)] py-20 flex flex-col items-center text-center">
                                                 <h1 className="text-heading text-4xl md:text-5xl font-bold mb-6">
                                                             Swap Skills, Grow Together with SkillSwap
                                                 </h1>
@@ -45,10 +45,10 @@ const LandingPage = () => {
                                                 <button onClick={() => navigate("/browse")} className="btn-primary text-lg">
                                                             Get Started
                                                 </button>
-                                    </section>
+                                    </motion.section>
 
                                     {/* Why Choose Us Section */}
-                                    <section className="py-16 bg-white">
+                                    <motion.section whileInView={{ scale: 1 }} initial={{ scale: 0.9 }} className="py-16 bg-white">
                                                 <h2 className="text-heading text-3xl md:text-4xl font-bold text-center mb-12">
                                                             Why Choose SkillSwap?
                                                 </h2>
@@ -64,7 +64,7 @@ const LandingPage = () => {
                                                             }
 
                                                 </div>
-                                    </section>
+                                    </motion.section>
 
                                     {/* How It Works Section */}
                                     <motion.section whileInView={{ scale: 1 }} initial={{ scale: 0.9 }} className="py-16 bg-[var(--color-neutral-bg)]">
