@@ -73,17 +73,17 @@ const OfferCard = ({ offer }) => {
                                     <div className="flex items-start justify-between mb-3">
                                                 <div className="flex items-center gap-3">
                                                             <img
-                                                                        src={offer.userId.avatar}
-                                                                        alt={offer.userId.name}
+                                                                        src={offer?.userId?.avatar}
+                                                                        alt={offer?.userId?.name}
                                                                         className="w-12 h-12 rounded-full object-cover border-2 border-[var(--color-neutral-light)]"
                                                             />
                                                             <div>
-                                                                        <h3 className="font-semibold text-[var(--color-neutral-dark)] text-lg">{offer.userId.name}</h3>
+                                                                        <h3 className="font-semibold text-[var(--color-neutral-dark)] text-lg">{offer.userId?.name}</h3>
                                                                         <div className="flex items-center gap-2 text-sm text-[var(--color-neutral-text)]">
                                                                                     <MapPin size={14} />
-                                                                                    <span>{offer.userId.location}</span>
+                                                                                    <span>{offer.userId?.location}</span>
                                                                                     <Star size={14} className="fill-yellow-400 text-yellow-400 ml-1" />
-                                                                                    <span>{offer.userId.rating}</span>
+                                                                                    <span>{offer.userId?.rating}</span>
                                                                         </div>
                                                             </div>
                                                 </div>
