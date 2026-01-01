@@ -10,8 +10,9 @@ import { motion } from "framer-motion";
 const Chat = () => {
             const dispatch = useDispatch();
             const { user } = useSelector((state) => state.auth);
-            const { request, loading, error } = useSelector((state) => state.request);
+            const { loading, error } = useSelector((state) => state.request);
             const [chats, setChats] = useState([]);
+            const [selectedUserName, setSelectedUserName] = useState("")
 
             const [messages, setMessages] = useState([]);
             const [selectedUserId, setSelectedUserId] = useState(null);
@@ -24,7 +25,6 @@ const Chat = () => {
                                     // Add incoming message to local state
                                     setMessages(prev => [...prev, msg]);
                         });
-
                         // Clean up
                         return () => {
                                     socket.off("receiveMessage");
@@ -78,10 +78,8 @@ const Chat = () => {
                                     receiverId: selectedUserId,
                                     text: messageInput
                         };
-
-
                         try {
-                                    // Send to socket
+                                    // Send to socket       
                                     socket.emit("sendMessage", newMsg);
 
                                     // Optimistic UI: show immediately
@@ -100,9 +98,15 @@ const Chat = () => {
                         }
             };
 
-            const handleSelectUser = (userId) => {
-                        setSelectedUserId(userId);
-                        setMessages([]); // reset previous messages while loading new
+            const handleSelectUser = async (userId) => {
+                        try {
+                                    setSelectedUserId(userId);
+                                    const { data } = await axiosinstance.get(`/auth/user/${userId}`);
+                                    setSelectedUserName(data.user.name)
+                                    // setMessages([]);     
+                        } catch (error) {
+                                    console.log(error)
+                        }
             };
 
             const getUserInitial = (name) => name?.charAt(0)?.toUpperCase() || '?';
@@ -160,6 +164,7 @@ const Chat = () => {
                                                                                                             </button>
                                                                                                             <h2 className="text-heading text-xl sm:text-2xl font-semibold">
                                                                                                                         {/* {chats.find(c => c.toUserId._id === selectedUserId)?.toUserId.name || 'Chat'} */}
+                                                                                                                        {selectedUserId && selectedUserName}
                                                                                                             </h2>
                                                                                                 </div>
                                                                                     </div>
