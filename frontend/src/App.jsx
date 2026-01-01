@@ -11,6 +11,7 @@ import OffersList from './pages/Browse';
 import Profile from './pages/Profile';
 import Request from './pages/Request';
 import Chat from './pages/Chat';
+import ProtectedRoutes from './protectedRoutes/ProtectedRoutes';
 
 const App = () => {
 
@@ -29,7 +30,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/my-offer' element={<OfferSubmissionPage />} />
-        <Route path='/browse' element={<OffersList />} />
+        <Route path='/browse' element={<ProtectedRoutes><OffersList /></ProtectedRoutes>} />
         <Route path='/profile/:userId' element={<Profile />} />
         <Route path='/request' element={<Request />} />
         <Route path='/chat' element={<Chat />} />
